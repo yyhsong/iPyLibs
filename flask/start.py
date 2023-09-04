@@ -31,7 +31,7 @@ def home():
     return '<h1>Hello, {0}</h1>'.format(user)
 
 
-# 在路由中设置参数
+# 在路由中设置规则参数
 @app.route('/hello/', methods=['GET'])
 @app.route('/hello/<name>', methods=['GET'])
 def hello(name='world'):
