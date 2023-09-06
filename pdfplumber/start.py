@@ -3,8 +3,8 @@
 
 """pdfplumber
 
-Plumb a PDF for detailed information about each char, rectangle, line, et cetera —
-and easily extract text and tables.
+Plumb a PDF for detailed information about each char, rectangle, and line.
+Plus: Table extraction and visual debugging.
 """
 
 import pdfplumber
@@ -18,7 +18,9 @@ with pdfplumber.open('./files/csrc.pdf') as pdf:
         page_num += 1
         print('---------- Page {} ----------'.format(page_num))
 
+        # 抽取表格数据
         lines = page.extract_table()
+
         for line in lines[1:]:  # 去掉行头
             line_num += 1
             print('Line', line_num, line)
